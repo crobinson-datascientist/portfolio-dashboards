@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courtny Robinson — Dashboard Demos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0D1B2A;
+  --teal: #1D9E75;
+  --teal-light: #E1F5EE;
+  --cream: #FAFAF8;
+  --muted: #6B7280;
+  --border: rgba(0,0,0,0.09);
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.wrap { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; flex: 1; }
+
+header { margin-bottom: 3rem; }
+.eyebrow {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 0.8rem;
+}
+h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--navy); letter-spacing: -0.02em; line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+.lede { font-size: 1rem; color: var(--muted); line-height: 1.7; max-width: 580px; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+.demo-card {
+  background: #fff; border: 1px solid var(--border); border-radius: 14px;
+  overflow: hidden; text-decoration: none; color: inherit; display: block;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.demo-card:hover { box-shadow: 0 10px 34px rgba(0,0,0,0.09); transform: translateY(-3px); }
+
+.thumb { height: 132px; position: relative; overflow: hidden; }
+.thumb-tableau { background: linear-gradient(135deg, #0D1B2A 0%, #1c3350 100%); }
+.thumb-looker  { background: linear-gradient(135deg, #0D1B2A 0%, #14405e 100%); }
+
+.card-body { padding: 1.25rem 1.4rem 1.4rem; }
+.tag {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #0F6E56; background: var(--teal-light); padding: 4px 10px;
+  border-radius: 100px; display: inline-block; margin-bottom: 0.7rem;
+}
+.demo-card h2 {
+  font-family: 'DM Serif Display', serif; font-size: 1.2rem;
+  color: var(--navy); margin-bottom: 0.45rem; letter-spacing: -0.01em;
+}
+.demo-card p { font-size: 0.86rem; line-height: 1.65; color: #4B5563; margin-bottom: 0.9rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.chip {
+  font-size: 0.68rem; font-weight: 500; padding: 3px 9px;
+  border-radius: 6px; background: #F3F4F6; color: #374151;
+}
+.view-link {
+  margin-top: 0.9rem; font-size: 0.8rem; font-weight: 600; color: var(--teal);
+  display: flex; align-items: center; gap: 5px;
+}
+
+.note {
+  margin-top: 2.5rem; background: #fff; border: 1px solid var(--border);
+  border-left: 3px solid var(--teal); border-radius: 10px;
+  padding: 1rem 1.25rem; font-size: 0.84rem; color: #4B5563; line-height: 1.65;
+}
+
+footer {
+  border-top: 1px solid var(--border); padding: 1.75rem 2rem;
+  text-align: center; font-size: 0.78rem; color: var(--muted);
+}
+footer a { color: var(--teal); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .wrap { padding: 2.5rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Courtny Robinson, PMP, CSM</p>
+    <h1>Dashboard Demos</h1>
+    <p class="lede">
+      Two interactive dashboard recreations built from professional project work — an Earned Value Management
+      view for a multi-project construction portfolio, and a procurement backlog analyzer with throughput-based
+      capacity forecasting. All data shown is fictional.
+    </p>
+  </header>
+
+  <div class="grid">
+
+    <a href="evm-dashboard.html" class="demo-card">
+      <div class="thumb thumb-tableau">
+        <svg viewBox="0 0 300 132" width="100%" height="132" preserveAspectRatio="none">
+          <line x1="30" y1="105" x2="280" y2="105" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <line x1="30" y1="20"  x2="30"  y2="105" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <polyline points="45,95 90,82 135,66 180,50 225,36 265,26" fill="none" stroke="#4e79a7" stroke-width="2.5" stroke-dasharray="5,3"/>
+          <polyline points="45,97 90,88 135,76 180,63 225,52 265,44" fill="none" stroke="#59a14f" stroke-width="2.5"/>
+          <polyline points="45,96 90,85 135,71 180,57 225,44 265,34" fill="none" stroke="#e15759" stroke-width="2.5"/>
+          <circle cx="265" cy="44" r="3.5" fill="#59a14f"/>
+          <circle cx="265" cy="34" r="3.5" fill="#e15759"/>
+          <circle cx="265" cy="26" r="3.5" fill="#4e79a7"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <span class="tag">Data Visualization</span>
+        <h2>Construction Project EVM Dashboard</h2>
+        <p>Executive view of six concurrent construction projects — EVM curves, Gantt tracking, budget variance, and a color-coded notes log flagging project health.</p>
+        <div class="chips">
+          <span class="chip">Tableau</span>
+          <span class="chip">EVM</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Excel</span>
+        </div>
+        <div class="view-link">View dashboard →</div>
+      </div>
+    </a>
+
+    <a href="procurement-dashboard.html" class="demo-card">
+      <div class="thumb thumb-looker">
+        <svg viewBox="0 0 300 132" width="100%" height="132" preserveAspectRatio="none">
+          <line x1="30" y1="105" x2="280" y2="105" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <line x1="30" y1="20"  x2="30"  y2="105" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+          <rect x="48"  y="58" width="16" height="47" fill="#1a73e8" rx="2"/>
+          <rect x="66"  y="70" width="16" height="35" fill="#34a853" rx="2"/>
+          <rect x="103" y="50" width="16" height="55" fill="#1a73e8" rx="2"/>
+          <rect x="121" y="64" width="16" height="41" fill="#34a853" rx="2"/>
+          <rect x="158" y="42" width="16" height="63" fill="#1a73e8" rx="2"/>
+          <rect x="176" y="56" width="16" height="49" fill="#34a853" rx="2"/>
+          <rect x="213" y="48" width="16" height="57" fill="#1a73e8" rx="2"/>
+          <rect x="231" y="62" width="16" height="43" fill="#34a853" rx="2"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <span class="tag">Procurement Analytics</span>
+        <h2>Procurement Backlog Analyzer</h2>
+        <p>Requisition intake vs. PO output with a days-to-clear capacity model, segmented by buyer, pending requester action, and entity.</p>
+        <div class="chips">
+          <span class="chip">Looker Studio</span>
+          <span class="chip">SQL</span>
+          <span class="chip">SAP Data</span>
+          <span class="chip">Forecasting</span>
+        </div>
+        <div class="view-link">View dashboard →</div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="note">
+    <strong>A note on data:</strong> These are recreations built for portfolio purposes. All project names,
+    budgets, buyer and requester names, entities, and figures are fictional. No proprietary or
+    employer-confidential data is represented here.
+  </div>
+</div>
+
+<footer>
+  Courtny Robinson, PMP, CSM &nbsp;·&nbsp;
+  <a href="mailto:robinson.courtnyk@gmail.com">robinson.courtnyk@gmail.com</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/courtnyrobinson" target="_blank">LinkedIn</a>
+</footer>
+
+</body>
+</html>
